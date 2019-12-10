@@ -9,8 +9,8 @@
 	}
 
 	.tm-banner-text {
-	  animation-duration: 4s;
-	  animation-name: slidein;
+		animation-duration: 4s;
+		animation-name: slidein;
 	}
 
 	@keyframes slidein { 
@@ -65,7 +65,6 @@
 	ol {
 		list-style-type:lower-alpha;
 	}
-
 
 	.padding-medium li:hover::before {
 		content: ">"; 
