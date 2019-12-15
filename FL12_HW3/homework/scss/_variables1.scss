@@ -1,0 +1,69 @@
+@mixin styleButton {
+	height: 48px;
+	width: 142px;
+	background-color: $color-button;
+	border: none;
+	border-radius: 2px;
+
+	font-size: 16px;
+	font-weight: bold;
+	color: white;
+}
+
+@mixin styleLink ($font-size-link:16px) {
+	color: white;
+	font-size: $font-size-link;
+}
+
+@mixin gradient ($direction, $color-stops) {
+	background: linear-gradient(135deg, $direction 0%, $color-stops 100%);
+}
+
+$fonts: (
+	font-source-sans-pro: 'Source Sans Pro',
+	font-fresca: 'Fresca',
+	font-hind: 'Hind',
+);
+
+$colors: (
+	dark-color-1: #21232E,
+	dark-color-2: #3B3F50,
+	dark-color-3: #2D2F3C,
+	white-color-1: white,
+	white-color-2: rgba(255, 255, 255, .7),
+	blue-color: #12A0C7,
+	green-color: #699900,
+	orange-color: #FF4F33,
+	yellow-color: #E3AC02,
+);
+
+$font-main: map-get($fonts, font-source-sans-pro), sans-serif;
+$font-logo: map-get($fonts, font-hind), sans-serif;
+$font-footer-center: map-get($fonts, font-hind), sans-serif;
+$font-footer-right: map-get($fonts, font-hind), sans-serif;
+$font-section-banner: map-get($fonts, font-hind), sans-serif;
+$font-logo-span-weight: 100;
+
+$font-color-main: map-get($colors, dark-color-3);
+$font-color-header: map-get($colors, dark-color-3);
+$font-color-footer: map-get($colors, white-color-2);
+$font-color-logo-header: map-get($colors, dark-color-3);
+$font-color-section-banner-heading: map-get($colors, dark-color-3);
+$font-color-section-text: map-get($colors, dark-color-3);
+$font-color-section-card-heading: map-get($colors, white-color-1); 
+$font-color-section-card-text: map-get($colors, white-color-2);
+$font-color-section-banner-text: map-get($colors, white-color-2);
+
+$background-color-main: map-get($colors, white-color-1);
+$background-color-footer: map-get($colors, dark-color-1);
+$background-color-section-card: map-get($colors, dark-color-1);
+
+$background-image: url(../img/m-h-day.jpg);
+
+$highlight-color-for-text: map-get($colors, blue-color);
+
+$color-button: map-get($colors, green-color);
+
+@mixin background-color-section-banner {
+	@include gradient (#629119,#315FCA)
+}
