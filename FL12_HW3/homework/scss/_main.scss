@@ -15,8 +15,8 @@
 	font-size: $font-size-link;
 }
 
-@mixin gradient ($direction, $color-stops) {
-	background: linear-gradient(135deg, $direction 0%, $color-stops 100%);
+@mixin background-color-section-banner {
+	background: linear-gradient(135deg, $direction 0%, $color-stops 100%)
 }
 
 %p-logo-style {
@@ -167,7 +167,6 @@ header {
 		margin: 0 auto;
 
 		.section_card {
-			
 			margin-bottom: 24px;
 			padding: 18px;
 			padding-right: 100px;
@@ -228,7 +227,6 @@ header {
 		height: 160px;
 		transform: translateY(80px);
 
-
 		display: flex;
 		flex-direction: row;
 		justify-content: space-between;
@@ -266,8 +264,6 @@ header {
 				color: $font-color-section-banner-text;
 			}
 		}
-
-
 
 		.section_banner_button {
 			@include styleButton;

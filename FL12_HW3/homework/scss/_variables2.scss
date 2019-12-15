@@ -44,6 +44,5 @@ $highlight-color-for-text: map-get($colors, orange-color);
 
 $color-button: map-get($colors, yellow-color);
 
-@mixin background-color-section-banner {
-	@include gradient (#D99E0A,#99374B)
-}
+$direction: #D99E0A;
+$color-stops: #99374B;
