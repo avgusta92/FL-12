@@ -23,6 +23,6 @@ if ( !a || !b || !c || isNaN(a) || isNaN(b) || isNaN(c)) {
         let xLargerZero1 = (-b + Math.sqrt(discriminant)) / (numberTwo * a);
         let xLargerZero2 = (-b - Math.sqrt(discriminant)) / (numberTwo * a);
 
-        console.log('x1 = ' + xLargerZero1 + ' and, x2 = ' + xLargerZero2);
+        console.log('x1 = ' + xLargerZero1 + ' and x2 = ' + xLargerZero2);
     }
 }
