@@ -24,11 +24,11 @@ if (isInvalid === true) {
     alert('Triangle doesn’t exist');
     console.log('Triangle doesn’t exist');
 } else {
-    if (Number(a) === Number(b) && Number(b) === Number(c) && Number(c) === Number(a)) {
+    if (NunberA === NunberB && NunberB === NunberC && NunberC === NunberA) {
         console.log('Equilateral triangle');
-    } else if (Number(a) === Number(b) || Number(b) === Number(c) || Number(c) === Number(a)) {
+    } else if (NunberA === NunberB || NunberB === NunberC || NunberC === NunberA) {
         console.log('Isosceles triangle');
-    } else if (Number(a) !== Number(b) && Number(b) !== Number(c) && Number(c) !== Number(a)) {
+    } else if (NunberA !== NunberB && NunberB !== NunberC && NunberC !== NunberA) {
         console.log('Scalene triangle');
     }
 }
