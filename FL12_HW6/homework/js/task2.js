@@ -12,7 +12,7 @@ let integerСheckA = !Number.isInteger(NunberA);
 let integerСheckB = !Number.isInteger(NunberB);
 let integerСheckC = !Number.isInteger(NunberC);
 
-if (!a || !b || !c) {
+if (!a || !b || !c || isNaN(a) || isNaN(b) || isNaN(c)) {
     alert('Input values should be ONLY numbers');
     isInvalid = true;
 } else if (NunberA <= 0 || NunberB <= 0 || NunberC <= 0 || integerСheckA || integerСheckB || integerСheckC) {
@@ -24,14 +24,11 @@ if (isInvalid === true) {
     alert('Triangle doesn’t exist');
     console.log('Triangle doesn’t exist');
 } else {
-    if (a === b && b === c && c === a) {
+    if (Number(a) === Number(b) && Number(b) === Number(c) && Number(c) === Number(a)) {
         console.log('Equilateral triangle');
-    } else if (a === b || b === c || c === a) {
+    } else if (Number(a) === Number(b) || Number(b) === Number(c) || Number(c) === Number(a)) {
         console.log('Isosceles triangle');
-    } else if (a !== b && b !== c && c !== a) {
+    } else if (Number(a) !== Number(b) && Number(b) !== Number(c) && Number(c) !== Number(a)) {
         console.log('Scalene triangle');
     }
 }
-
-// eslint ./js/task2.js
-

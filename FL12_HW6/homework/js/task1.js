@@ -1,8 +1,8 @@
-let a = prompt('Please input a');
-let b = prompt('Please input b');
-let c = prompt('Please input c');
+let a = Number(prompt('Please input a'));
+let b = Number(prompt('Please input b'));
+let c = Number(prompt('Please input c'));
 
-if ( !a || !b || !c || isNaN(a) || isNaN(b) || isNaN(c) || a === 0 || b === 0 || c === 0 ) {
+if ( !a || !b || !c || isNaN(a) || isNaN(b) || isNaN(c)) {
     console.log('Invalid input data');
 } else {
     const numberTwo = 2;
