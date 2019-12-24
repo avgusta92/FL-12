@@ -4,14 +4,18 @@ let c = prompt('Please input c');
 
 let isInvalid = false;
 
-let NunberA = parseInt(a, 10)
-let NunberB = parseInt(b, 10)
-let NunberC = parseInt(c, 10)
+let NunberA = Number(a);
+let NunberB = Number(b);
+let NunberC = Number(c);
+
+let integerСheckA = !Number.isInteger(NunberA);
+let integerСheckB = !Number.isInteger(NunberB);
+let integerСheckC = !Number.isInteger(NunberC);
 
 if (!a || !b || !c) {
     alert('Input values should be ONLY numbers');
     isInvalid = true;
-} else if (NunberA <= 0 || NunberB <= 0 || NunberC <= 0) {
+} else if (NunberA <= 0 || NunberB <= 0 || NunberC <= 0 || integerСheckA || integerСheckB || integerСheckC) {
     alert('A triangle must have 3 sides with a positive definite length');
     isInvalid = true;
 }
@@ -28,8 +32,6 @@ if (isInvalid === true) {
         console.log('Scalene triangle');
     }
 }
-// У треугольника сумма любых двух сторон должна быть больше третьей. Иначе две стороны просто "лягут" на третью и треугольника не получится.
-
 
 // eslint ./js/task2.js
 

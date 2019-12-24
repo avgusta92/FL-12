@@ -7,13 +7,9 @@ if ( !a || !b || !c || isNaN(a) || isNaN(b) || isNaN(c) || a === 0 || b === 0 ||
 } else {
     let numberTwo = 2;
     let numberFour = 4;
-
     let discriminant = b * b - numberFour * a * c;
-
     let xEqualsZero = -b / (numberTwo * a);
-
     let xLargerZero1 = (-b + Math.sqrt(discriminant)) / (numberTwo * a);
-
     let xLargerZero2 = (-b - Math.sqrt(discriminant)) / (numberTwo * a);
 
     if (discriminant < 0) {
