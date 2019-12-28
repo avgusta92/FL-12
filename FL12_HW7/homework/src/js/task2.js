@@ -17,45 +17,44 @@ if (question) {
         let prizeAttempt2 = 50;
         let prizeAttempt3 = 25;
 
-        let NumberIsWin = false;
+        let numberIsWin = false;
 
         playGameFromStart = false;
         playСontinue = false;
 
-        let number0 = 0;
-        let number1 = 1;
-        let number2 = 2;
-        let number3 = 3;
-        let number4 = 4;
+        const NUMBER_0 = 0,
+        NUMBER_1 = 1,
+        NUMBER_2 = 2,
+        NUMBER_3 = 3,
+        NUMBER_4 = 4;
 
         do {
             playСontinue = false;
-            attempt = number0;
+            attempt = NUMBER_0;
 
-            if (totalPrize === number0) {
+            if (totalPrize === NUMBER_0) {
                 randomNumber = parseInt(Math.random() * randomRange);
             } else {
-                randomRange = randomRange + number4;
+                randomRange = randomRange + NUMBER_4;
                 randomNumber = parseInt(Math.random() * randomRange);
-                prizeAttempt1 = prizeAttempt1 * number2;
-                prizeAttempt2 = prizeAttempt2 * number2;
-                prizeAttempt3 = prizeAttempt3 * number2;
+                prizeAttempt1 = prizeAttempt1 * NUMBER_2;
+                prizeAttempt2 = prizeAttempt2 * NUMBER_2;
+                prizeAttempt3 = prizeAttempt3 * NUMBER_2;
             }
 
             do {
-
-                if (attempt === number0) {
+                if (attempt === NUMBER_0) {
                     prizeAttempt = prizeAttempt1;
                 }
-                if (attempt === number1) {
+                if (attempt === NUMBER_1) {
                     prizeAttempt = prizeAttempt2;
                 }
-                if (attempt === number2) {
+                if (attempt === NUMBER_2) {
                     prizeAttempt = prizeAttempt3;
                 }
 
-                let textChooseNumber = 'Choose a roulette pocket number from 0 то ' + (randomRange - number1),
-                    textAttemptsLeft = '\nAttempts left: ' + (number3 - attempt),
+                let textChooseNumber = 'Choose a roulette pocket number from 0 то ' + (randomRange - NUMBER_1),
+                    textAttemptsLeft = '\nAttempts left: ' + (NUMBER_3 - attempt),
                     textTotalPrize = '\nTotal prize: ' + totalPrize + '$',
                     textPossiblePrize = '\nPossible prize on current attempt: ' + prizeAttempt + '$';
                 enteredNumber = prompt(textChooseNumber
@@ -67,32 +66,32 @@ if (question) {
                 attempt++;
 
                 if (enteredNumberInt !== randomNumber || !enteredNumber) {
-                    NumberIsWin = false;
+                    numberIsWin = false;
                 } else if (enteredNumberInt === randomNumber) {
-                    NumberIsWin = true;
+                    numberIsWin = true;
 
-                    if (attempt === number1) {
-                        totalPrize = totalPrize + prizeAttempt1;
+                    if (attempt === NUMBER_1) {
+                        totalPrize += prizeAttempt1;
                         alert('Congratulation, you won! Your prize is: ' + totalPrize + '$');
                     }
-                    if (attempt === number2) {
-                        totalPrize = totalPrize + prizeAttempt2;
+                    if (attempt === NUMBER_2) {
+                        totalPrize += prizeAttempt2;
                         alert('Congratulation, you won! Your prize is: ' + totalPrize + '$');
                     }
-                    if (attempt === number3) {
-                        totalPrize = totalPrize + prizeAttempt3;
+                    if (attempt === NUMBER_3) {
+                        totalPrize += prizeAttempt3;
                         alert('Congratulation, you won! Your prize is: ' + totalPrize + '$');
                     }
                 }
-            } while (attempt < number3 && enteredNumberInt !== randomNumber && !!enteredNumber);
+            } while (attempt < NUMBER_3 && enteredNumberInt !== randomNumber && !!enteredNumber);
 
-            if (NumberIsWin) {
+            if (numberIsWin) {
                 playСontinue = confirm('Do you want to continue?');
             }
-            if (!NumberIsWin) {
+            if (!numberIsWin) {
                 alert('Thank you for your participation. Your prize is: ' + totalPrize + '$');
             }
-            if (!playСontinue || !NumberIsWin) {
+            if (!playСontinue || !numberIsWin) {
                 playGameFromStart = confirm('Do you want to play a game again?');
             }
 
