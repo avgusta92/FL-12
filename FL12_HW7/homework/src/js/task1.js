@@ -1,7 +1,7 @@
 let email = prompt('Please enter your email address');
 
-let fiveSymbols = 5;
-let sixSymbols = 6;
+const FIVE_SYMBOLS = 5,
+    SIX_SYMBOLS = 6;
 
 let isValidEmail = false;
 let isValidPassword = false;
@@ -11,7 +11,7 @@ let isValidNewPassword = false;
 
 if (!email) {
     alert('Canceled');
-} else if (email.length < fiveSymbols) {
+} else if (email.length < FIVE_SYMBOLS) {
     alert('I don\'t know any emails having name length less than 5 symbols');
 } else if (email === 'user@gmail.com' || email === 'admin@gmail.com') {
     isValidEmail = true;
@@ -27,7 +27,7 @@ if (isValidEmail) {
 
     if (!password) {
         alert('Canceled');
-    } else if ( passwordForUser || passwordForAdmin ) {
+    } else if (passwordForUser || passwordForAdmin) {
         isValidPassword = true;
     } else {
         alert('Wrong password');
@@ -35,16 +35,14 @@ if (isValidEmail) {
 }
 
 if (isValidPassword) {
-    let changePassword = confirm('Do you want to change your password?');
+    isValidChangePassword = confirm('Do you want to change your password?');
 
-    if (!changePassword) {
+    if (!isValidChangePassword) {
         alert('You have failed the change');
-    } else if (changePassword) {
-        isValidChangePassword = true;
     }
 }
 
-if (isValidChangePassword){
+if (isValidChangePassword) {
     let oldPassword = prompt('Write the old password');
 
     let passwordForUser = email === 'user@gmail.com' && oldPassword === 'UserPass';
@@ -52,26 +50,26 @@ if (isValidChangePassword){
 
     if (!oldPassword) {
         alert('Canceled');
-    } else if ( passwordForUser || passwordForAdmin ) {
+    } else if (passwordForUser || passwordForAdmin) {
         isValidOldPassword = true;
     } else {
         alert('Wrong password');
     }
-} 
+}
 
 let newPassword = '';
 
-if (isValidOldPassword){
+if (isValidOldPassword) {
     newPassword = prompt('Please enter your new password');
 
-    if (newPassword.length < sixSymbols){
+    if (newPassword.length < SIX_SYMBOLS) {
         alert('It’s too short password. Sorry');
-    }else if (newPassword) {
+    } else if (newPassword) {
         isValidNewPassword = true;
     }
 }
 
-if (isValidNewPassword){
+if (isValidNewPassword) {
     let newPasswordCheck = prompt('Please enter your new password again');
 
     if (newPasswordCheck === newPassword) {
