@@ -4,6 +4,7 @@ if (question) {
     let playGameFromStart = false;
     let playСontinue = false;
 
+    // Start the Game
     do {
         let randomNumber = 0;
         let enteredNumber = '';
@@ -28,6 +29,7 @@ if (question) {
         NUMBER_3 = 3,
         NUMBER_4 = 4;
 
+        // Start the Round 
         do {
             playСontinue = false;
             attempt = NUMBER_0;
@@ -41,7 +43,8 @@ if (question) {
                 prizeAttempt2 = prizeAttempt2 * NUMBER_2;
                 prizeAttempt3 = prizeAttempt3 * NUMBER_2;
             }
-
+            
+            // Game
             do {
                 if (attempt === NUMBER_0) {
                     prizeAttempt = prizeAttempt1;
