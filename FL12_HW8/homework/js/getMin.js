@@ -8,4 +8,4 @@ function getMin() {
     }
     return min;
 }
-getMin(3, 4, 6, 8)
+getMin(3, 0, -3);
