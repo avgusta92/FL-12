@@ -1,106 +1,105 @@
 function convert() {
-    let result1 = [];
+    let result = [];
     for (let i = 0; i < arguments.length; i++) {
         if (typeof arguments[i] === 'string') {
-            result1.push(parseInt(arguments[i]));
+            result.push(parseInt(arguments[i]));
         } else if (typeof arguments[i] === 'number') {
             let x = '' + arguments[i];
-            result1.push(x);
+            result.push(x);
         }
     }
-    return result1;
+    return result;
 }
 
-function executeforEach(a, b) {
-    for (let i = 0; i < a.length; i++) {
-        b(a[i]);
+function executeforEach(arr, func) {
+    for (let i = 0; i < arr.length; i++) {
+        func(arr[i]);
     }
 }
 
-function mapArray(array, func) {
-    let result3 = [];
-    function newFun(el) {
+function mapArray(arr, func) {
+    let result = [];
+    function newFunc(el) {
         if (typeof el === 'string') {
-            result3.push(func(parseInt(el)));
+            result.push(func(parseInt(el)));
         } else if (typeof el === 'number') {
-            result3.push(func(el));
+            result.push(func(el));
         }
     }
-    executeforEach(array, newFun);
-    return result3;
+    executeforEach(arr, newFunc);
+    return result;
 }
 
-function filterArray(array, func) {
-    let result4 = [];
-    function newFun(el) {
-        if (func(el) === true) {
-            result4.push(el);
+function filterArray(arr, func) {
+    let result = [];
+    function newFunc(el) {
+        if (func(el)) {
+            result.push(el);
         }
     }
-    executeforEach(array, newFun);
-    return result4;
+    executeforEach(arr, newFunc);
+    return result;
 }
 
-function flipOver(a) {
-    let result5 = '';
-    for (let i = a.length - 1; i >= 0; i--) {
-        result5 += a[i];
+function flipOver(str) {
+    let result = '';
+    for (let i = str.length - 1; i >= 0; i--) {
+        result += str[i];
     }
-    return result5;
+    return result;
 }
 
-function makeListFromRange(a) {
-    let result6 = [];
-    for (let i = a[0]; i <= a[1]; i++) {
-        result6.push(i);
+function makeListFromRange(arr) {
+    let result = [];
+    for (let i = arr[0]; i <= arr[1]; i++) {
+        result.push(i);
     }
-    return result6;
+    return result;
 }
 
-function getArrayOfKeys(array, b) {
-    let result7 = [];
-    function newFun(el) {
-        result7.push(el[b]);
+function getArrayOfKeys(arr, key) {
+    let result = [];
+    function newFunc(el) {
+        result.push(el[key]);
     }
-    executeforEach(array, newFun);
-    return result7;
+    executeforEach(arr, newFunc);
+    return result;
 }
 
-function substitute(array) {
-    let result8 = [];
+function substitute(arr) {
+    let result = [];
     const number30 = 30;
     function func(el) {
         if (el > number30) {
-            result8.push(el);
-            result8.push('*');
+            result.push(el);
+        } else {
+            result.push('*');
         }
     }
-    mapArray(array, func);
-    return result8;
+    mapArray(arr, func);
+    return result;
 }
 
 function getPastDay(a, b) {
-    let newDate = new Date(a);
-    newDate.setDate(newDate.getDate() - b);
-    return newDate;
+    let result = new Date(a);
+    result.setDate(result.getDate() - b);
+    return result;
 }
 
 function formatDate(a) {
+    let result = '';
     const ten = 10;
-    let newDate = '';
-    let zeroHours = '';
-    let zeroMinutes = '';
     let date = a.getDate();
     let year = a.getFullYear();
     let month = a.getMonth() + 1;
     let hours = a.getHours();
     let minutes = a.getMinutes();
     if (hours < ten) {
-        zeroHours = '0';
+        hours = '0' + hours;
     }
     if (minutes < ten) {
-        zeroMinutes = '0';
+        minutes = '0' + minutes;
     }
-    newDate = year + '/' + month + '/' + date + ' ' + zeroHours + hours + ':' + zeroMinutes + minutes;
-    return newDate;
+    result = `${year}/${month}/${date} ${hours}:${minutes}`;
+    return result;
 }
