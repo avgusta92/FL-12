@@ -83,7 +83,7 @@ function substitute(arr) {
 function getPastDay(a, b) {
     let result = new Date(a);
     result.setDate(result.getDate() - b);
-    return result;
+    return result.getDate();
 }
 
 function formatDate(a) {
