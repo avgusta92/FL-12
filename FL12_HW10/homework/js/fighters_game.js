@@ -40,7 +40,7 @@ function Fighter(fighter) {
             let newHealth = defender.getHealth() - fighter.damage;
             defender.setHealth(newHealth);
             result = fighter.name + ' makes ' + fighter.damage + ' damage to ' + defender.getName();
-        } else if (randomNumber >= probabilityOfSuccess) {
+        } else {
             lossesResult++;
             result = fighter.name + ' attack missed';
         }
@@ -63,11 +63,7 @@ function Fighter(fighter) {
 
     this.dealDamage = function (healthPoints) {
         let hp = fighter.hp - healthPoints;
-        if (hp > 0) {
-            fighter.hp = hp;
-        } else {
-            fighter.hp = 0;
-        }
+        fighter.hp = hp > 0 ? hp : 0;
     }
 
     this.addWin = function () {
@@ -86,9 +82,22 @@ function battle(fighter1, fighter2) {
     } else if (fighter2.getHealth() <= 0) {
         console.log(`${fighter2.getName()} is dead and can't fight.`);
     } else {
+
+        let activeFighter = fighter2;
+        let defenderFighter;
+
         do {
-            fighter1.attack(fighter2);
-            fighter2.attack(fighter1);
+
+            if (activeFighter === fighter2) {
+                activeFighter = fighter1;
+                defenderFighter = fighter2;
+            } else {
+                activeFighter = fighter2;
+                defenderFighter = fighter1;
+            }
+
+            activeFighter.attack(defenderFighter);
+
         } while (fighter1.getHealth() > 0 && fighter2.getHealth() > 0);
 
         let winner;
@@ -97,6 +106,7 @@ function battle(fighter1, fighter2) {
         } else if (fighter2.getHealth() <= 0) {
             winner = fighter1.getName();
         }
+
         console.log(winner + ' has won!')
     }
 }
