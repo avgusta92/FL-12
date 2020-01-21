@@ -42,7 +42,7 @@ function Fighter(fighter) {
             result = fighter.name + ' makes ' + fighter.damage + ' damage to ' + defender.getName();
         } else if (randomNumber >= probabilityOfSuccess) {
             lossesResult++;
-            result = defender.getName() + ' attack missed';
+            result = fighter.name + ' attack missed';
         }
 
         console.log(result);
