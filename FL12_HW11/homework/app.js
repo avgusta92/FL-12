@@ -73,7 +73,6 @@ function newItem(value, place) {
     newWrap.className = `wrap`;
     wrap.appendChild(newWrap);
 
-
     let newLable = document.createElement('lable');
     newLable.className = `lable empty-lable`;
     newLable.innerHTML = `Folder is empty`;
