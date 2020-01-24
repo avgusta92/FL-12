@@ -1,0 +1,48 @@
+ * {
+box-sizing: border-box; }
+
+img {
+width: 100%;
+height: auto; }
+
+body, p, h1, h2, h3, h4, a {
+margin: 0; }
+  
+.main-wrap {
+    display: flex;
+    flex-direction: column;
+}
+
+.wrap .wrap {
+    margin-left: 20px;
+    display: none;
+}
+
+.wrap {
+    cursor: pointer;
+}
+
+.folder {
+    height: 30px;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    margin-left: 6px;
+}
+
+.lable {
+    margin-left: 6px;
+    font-size: 17px;
+}
+
+.empty-lable {
+    font-style: italic;
+}
+
+.icon-folder {
+    color: rgb(250, 193, 49);
+}
+
+.icon-file {
+    color: rgb(168, 168, 168);
+}
